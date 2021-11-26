@@ -4,7 +4,7 @@ Site de hotel com reservas em Next.js
 
 ## Projeto rodando
 
-Preview do projeto [Pim](http://stackblitz.com/):
+Preview do projeto: [Hotel RedLight](http://stackblitz.com/):
 
 ## Como usar
 
