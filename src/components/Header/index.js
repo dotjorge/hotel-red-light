@@ -97,6 +97,7 @@ Styled.Menu = styled.div`
 `
 
 Styled.Item = styled.a`
+  font-size: 0.9em;
   color: ${({ theme }) => theme.colors.gray.dark};
   padding: 0.6em 1.4em;
   outline: 2px solid transparent;
@@ -159,6 +160,8 @@ Styled.UserDropdownMenu = styled.div`
 Styled.LoginOrRegister = styled.div`
   color: ${({ theme }) => theme.colors.primary.light};
   font-weight: bold;
+  font-size: 0.9em;
+
   > span {
     margin: 0 0.5em;
   }
