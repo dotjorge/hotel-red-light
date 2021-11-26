@@ -218,7 +218,7 @@ export default function Home() {
       <main>
         <section className="container">
           <Styled.Banner>
-            <img src="/img/home-banner.jpg" height="100%" width="auto" />
+            <img src="/img/home-banner-4.jpg" height="100%" width="auto" />
           </Styled.Banner>
         </section>
         <Styled.Section bg="primary.light" detail={true}>
