@@ -7,22 +7,28 @@ import Link from "next/link"
 const Styled = () => {}
 
 const ButtonStyles = css`
-  width: 100%;
+  width: ${({ size }) => (size ? size : "100%")};
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border: none;
   font-family: Ubuntu;
   font-size: 1.1em;
   font-weight: 600;
   /* padding: 1em 2em; */
   height: 2.8125em;
-  padding: 0 2em;
+  padding: 2em 2em;
   cursor: pointer;
   transition: 0.2s ease;
-  border-radius: 4px;
+  border-radius: 8px;
   :hover {
     /* opacity: 0.9; */
   }
   :active {
     opacity: 0.7;
+  }
+  .marginRight {
+    margin-right: 1em;
   }
 `
 
@@ -39,7 +45,7 @@ Styled.Button = styled.button`
     opacity: 0.5;
     left: 0;
     top: 0;
-    border-radius: 4px;
+    border-radius: 8px;
     box-shadow: 0 0 0 ${({ theme }) => theme.colors.primary.light};
     transition: 0.2s ease;
   }
@@ -68,6 +74,7 @@ export default function Button({
   loadingText = "Carregando",
   type,
   href,
+  size,
   ...rest
 }) {
   function getButton() {
@@ -75,7 +82,7 @@ export default function Button({
       return <Styled.InvertedButton {...rest}>{children}</Styled.InvertedButton>
     }
     return (
-      <Styled.Button {...rest}>
+      <Styled.Button size={size} {...rest}>
         {isLoading && (
           <FontAwesomeIcon
             icon={faCog}

@@ -18,6 +18,13 @@ Styled.Banner = styled.div`
   align-items: center;
   justify-content: flex-end;
   border-radius: 15px;
+
+  @media only screen and (max-width: 800px) {
+    & {
+      height: 400px;
+    }
+  }
+
   img {
     object-fit: cover;
   }
@@ -44,6 +51,20 @@ Styled.Section = styled.section`
   }
   .red {
     color: ${({ theme }) => theme.colors.primary.light};
+  }
+  .grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    h1 {
+      color: ${({ theme }) => theme.colors.primary.light};
+      text-align: left;
+    }
+    p {
+      color: ${({ theme }) => theme.colors.gray.dark};
+    }
+    .half {
+    }
   }
 `
 
@@ -90,7 +111,7 @@ Styled.Feedbacks = styled.div`
     gap: 1em;
     flex-direction: column;
     flex: 0 0 calc((100% / 3) - (4em / 1.5));
-    height: 500px;
+    height: 550px;
     padding: 1em;
     background: white;
     border-radius: 15px;
@@ -207,7 +228,7 @@ export default function Home() {
     {
       name: "João",
       avatar: "https://randomuser.me/api/portraits/lego/0.jpg",
-      room: "/img/photo-9.jpg",
+      room: "/img/photo-7.jpg",
       stars: ["*"],
       review: "Nunca mais volto"
     }
@@ -221,6 +242,35 @@ export default function Home() {
             <img src="/img/home-banner-4.jpg" height="100%" width="auto" />
           </Styled.Banner>
         </section>
+
+        <Styled.Section id="contato" bg="white">
+          <div className="container">
+            {/* <h1 className="red">Nosso aplicativo é de graça!</h1> */}
+            <div className="grid">
+              <div className="half">
+                <img src="/svgs/register-screen.svg" width={"100%"} />
+              </div>
+              <div className="half">
+                <h1>Baixo nosso aplicativo e faça sua reserva</h1>
+                <p>
+                  Com ele você baixa e gerencie suas reservas mais facilmente.
+                </p>
+                <Button.Link href="/dowload">
+                  <Button size="auto">
+                    <img
+                      className="marginRight"
+                      src="/img/playstore.png"
+                      width={"25px"}
+                      height={"25px"}
+                    />
+                    Baixar na Playstore
+                  </Button>
+                </Button.Link>
+              </div>
+            </div>
+          </div>
+        </Styled.Section>
+
         <Styled.Section bg="primary.light" detail={true}>
           <div className="container">
             <h1>Avaliações dos hospedes</h1>

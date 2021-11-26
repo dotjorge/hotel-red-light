@@ -37,7 +37,7 @@ const GlobalStyle = createGlobalStyle`
     padding:0;
     margin:0;
     /* padding-top:12.5em; */
-    padding-top:9.5em;
+    /* padding-top:9.5em; */
     
     @media only screen and (max-width: 1000px) {
     & {
@@ -48,7 +48,7 @@ const GlobalStyle = createGlobalStyle`
     & {
       font-size:80%;
       /* padding-top:36.5em; */
-      padding-top:28.5em;
+      /* padding-top:28.5em; */
       }
     }
   }
@@ -86,10 +86,10 @@ const GlobalStyle = createGlobalStyle`
     border-radius:4px;
   }
   .without-reserve{
-    margin-top:-5.125em;
+    /* margin-top:-5.125em; */
     @media only screen and (max-width: 800px) {
     & {
-      margin-top:-28.125em;
+      /* margin-top:-28.125em; */
       }
     }
   }
@@ -112,7 +112,7 @@ export default function App({ Component, pageProps }) {
             content="width=device-width, initial-scale=1.0, maximum-scale=1.0, 
         user-scalable=0"
           />
-          <title>Hotel RedLight - Seu melhor hotel</title>
+          <title>Hotel RedLight - Sua melhor opção</title>
         </Head>
         <Header />
         <Component {...pageProps} />

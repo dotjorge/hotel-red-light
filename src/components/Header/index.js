@@ -10,8 +10,8 @@ Styled.Sticky = styled.div`
   position: sticky;
   top: 0;
   z-index: 10;
-  position: fixed;
-  width: 100%;
+  /* position: fixed;
+  width: 100%; */
   overflow: hidden;
   backdrop-filter: blur(20px);
   :before {
@@ -234,10 +234,10 @@ export default function Header() {
         <Styled.MenuContainer id={"toggle-menu"}>
           <Menu />
         </Styled.MenuContainer>
-        <LoginOrRegister />
+        {/* <LoginOrRegister /> */}
         <Hamburguer />
       </Styled.Container>
-      <Reserve show={router.pathname === "/" ? true : false} />
+      <Reserve show={router.pathname === "/" ? false : false} />
     </Styled.Sticky>
   )
 }
@@ -257,16 +257,16 @@ function Menu() {
       route: "/"
     },
     {
-      name: "Contato",
-      route: "/#contato"
+      name: "Baixe o app",
+      route: "/#baixe-o-app"
     },
     {
-      name: "Quartos",
+      name: "Avaliações",
       route: "/quartos"
     },
     {
-      name: "Pacotes",
-      route: "/pacots"
+      name: "Contato",
+      route: "/#contato"
     }
   ]
   return (
@@ -275,7 +275,7 @@ function Menu() {
         <Link href={item.route} key={index}>
           <Styled.Item
             className="pressable border-radius"
-            selected={item.route === router.pathname ? true : false}
+            selected={item.route === "/#baixe-o-app" ? true : false}
           >
             {item.name}
           </Styled.Item>
