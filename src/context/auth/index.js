@@ -47,7 +47,11 @@ export const AuthProvider = ({ children }) => {
     Cookies.remove("token")
     setUser(null)
     delete api.defaults.headers.Authorization
-    window.location.pathname = "/login"
+    window.location.pathname = "/entrar"
+  }
+
+  const redirect = () => {
+    window.location.pathname = "/entrar"
   }
 
   const register = userData => api.post("auth/signup?tipo=hospede", userData)

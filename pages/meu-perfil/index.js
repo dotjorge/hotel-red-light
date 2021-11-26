@@ -26,7 +26,7 @@ export default function Login() {
   return (
     <>
       <Head>
-        <title>Entrar - Hotel RedLight</title>
+        <title>Meu perfil - Hotel RedLight</title>
       </Head>
       <main className="container without-reserve">
         <Form.Container>

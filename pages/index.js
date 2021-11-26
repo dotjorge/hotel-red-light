@@ -12,9 +12,15 @@ Styled.Banner = styled.div`
   position: relative;
   width: 100%;
   height: 600px;
-  border-radius: 15px;
   overflow: hidden;
   margin-top: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  border-radius: 15px;
+  img {
+    object-fit: cover;
+  }
 `
 
 Styled.Section = styled.section`
@@ -173,35 +179,35 @@ export default function Home() {
     {
       name: "Jorge",
       avatar: "https://avatars.githubusercontent.com/u/74606139?v=4",
-      room: "/img/home-banner.jpg",
+      room: "/img/photo-3.jpg",
       stars: ["*", "*", "*", "*", "*"],
       review: "Muito bom"
     },
     {
       name: "Andrei",
       avatar: "https://avatars.githubusercontent.com/u/55711772?v=4",
-      room: "/img/home-banner.jpg",
+      room: "/img/photo-5.jpg",
       stars: ["*", "*"],
       review: "Não gostei"
     },
     {
       name: "Matheus",
       avatar: "https://avatars.githubusercontent.com/u/69362122?v=4",
-      room: "/img/home-banner.jpg",
+      room: "/img/photo-6.jpg",
       stars: ["*", "*", "*"],
       review: "Mais ou menos"
     },
     {
       name: "Cássio",
       avatar: "https://randomuser.me/api/portraits/lego/6.jpg",
-      room: "/img/home-banner.jpg",
+      room: "/img/photo-8.jpg",
       stars: ["*", "*", "*", "*", "*"],
       review: "Vale muito apena"
     },
     {
       name: "João",
       avatar: "https://randomuser.me/api/portraits/lego/0.jpg",
-      room: "/img/home-banner.jpg",
+      room: "/img/photo-9.jpg",
       stars: ["*"],
       review: "Nunca mais volto"
     }
@@ -212,12 +218,7 @@ export default function Home() {
       <main>
         <section className="container">
           <Styled.Banner>
-            <Image
-              src="/img/home-banner.jpg"
-              width="100%"
-              layout="fill"
-              objectFit="cover"
-            />
+            <img src="/img/home-banner.jpg" height="100%" width="auto" />
           </Styled.Banner>
         </section>
         <Styled.Section bg="primary.light" detail={true}>

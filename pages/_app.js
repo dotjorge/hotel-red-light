@@ -112,6 +112,7 @@ export default function App({ Component, pageProps }) {
             content="width=device-width, initial-scale=1.0, maximum-scale=1.0, 
         user-scalable=0"
           />
+          <title>Hotel RedLight - Seu melhor hotel</title>
         </Head>
         <Header />
         <Component {...pageProps} />
