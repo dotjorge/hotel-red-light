@@ -300,7 +300,7 @@ export default function Home() {
 
   return (
     <>
-      <main>
+      <main id="inicio">
         <Styled.Section className="no-padding" bg="white">
           <div className="container" style={{ position: "relative" }}>
             <img

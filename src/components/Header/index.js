@@ -254,7 +254,7 @@ function Menu() {
   const MENU_ITEMS = [
     {
       name: "Inicio",
-      route: "/"
+      route: "/#inicio"
     },
     {
       name: "Baixe o app",
