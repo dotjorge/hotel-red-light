@@ -262,7 +262,7 @@ function Menu() {
     },
     {
       name: "Avaliações",
-      route: "/quartos"
+      route: "/#avaliacoes"
     },
     {
       name: "Contato",

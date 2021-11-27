@@ -18,7 +18,16 @@ Styled.Banner = styled.div`
   align-items: center;
   justify-content: flex-end;
   border-radius: 15px;
-
+  :after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: red;
+    z-index: -1;
+  }
   @media only screen and (max-width: 800px) {
     & {
       height: 400px;
@@ -31,7 +40,6 @@ Styled.Banner = styled.div`
 `
 
 Styled.Section = styled.section`
-  ${props => console.log(props)}
   ${({ detail }) =>
     detail &&
     css`
@@ -45,25 +53,81 @@ Styled.Section = styled.section`
   width: 100%;
   padding: 2em 0;
   margin: 2em 0;
+  &.no-padding {
+    padding: 0;
+  }
+  .bannerLeft {
+    left: -35px;
+    top: 0px;
+    position: absolute;
+    border-radius: 15px;
+    opacity: 0.5;
+    transform: scale(0.8);
+    transform-origin: left;
+    filter: blur(2px);
+  }
+  .bannerRight {
+    right: -35px;
+    top: 0px;
+    position: absolute;
+    border-radius: 15px;
+    opacity: 0.9;
+    transform: scale(0.8);
+    transform-origin: right;
+    filter: blur(2px) brightness(0.5);
+  }
   h1 {
     color: ${({ theme }) => theme.colors.white};
     text-align: center;
+    margin-top: 2em;
   }
   .red {
     color: ${({ theme }) => theme.colors.primary.light};
   }
+
   .grid {
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr;
+    gap: 2em;
+
+    .photo {
+      border-radius: 15px;
+    }
+
+    @media only screen and (max-width: 600px) {
+      & {
+        grid-template-columns: 1fr;
+        .half {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+        }
+        .register {
+          width: 50%;
+          margin: 0 auto;
+        }
+      }
+    }
+
     h1 {
       color: ${({ theme }) => theme.colors.primary.light};
       text-align: left;
+      &.white {
+        color: ${({ theme }) => theme.colors.white};
+      }
     }
     p {
       color: ${({ theme }) => theme.colors.gray.dark};
+      &.white {
+        color: ${({ theme }) => theme.colors.gray.light};
+      }
     }
     .half {
+      h1 {
+        margin-top: 1.5em;
+      }
     }
   }
 `
@@ -237,18 +301,36 @@ export default function Home() {
   return (
     <>
       <main>
-        <section className="container">
-          <Styled.Banner>
-            <img src="/img/home-banner-4.jpg" height="100%" width="auto" />
-          </Styled.Banner>
-        </section>
+        <Styled.Section className="no-padding" bg="white">
+          <div className="container" style={{ position: "relative" }}>
+            <img
+              className="bannerLeft"
+              src="/img/photo-2.jpg"
+              height="100%"
+              width="auto"
+            />
+            <img
+              className="bannerRight"
+              src="/img/photo-1.jpg"
+              height="100%"
+              width="auto"
+            />
+            <Styled.Banner>
+              <img src="/img/home-banner-4.jpg" height="100%" width="auto" />
+            </Styled.Banner>
+          </div>
+        </Styled.Section>
 
-        <Styled.Section id="contato" bg="white">
+        <Styled.Section id="baixe-o-app" bg="white">
           <div className="container">
             {/* <h1 className="red">Nosso aplicativo é de graça!</h1> */}
             <div className="grid">
               <div className="half">
-                <img src="/svgs/register-screen.svg" width={"100%"} />
+                <img
+                  className="register"
+                  src="/svgs/download-app.svg"
+                  width={"100%"}
+                />
               </div>
               <div className="half">
                 <h1>Baixo nosso aplicativo e faça sua reserva</h1>
@@ -271,7 +353,64 @@ export default function Home() {
           </div>
         </Styled.Section>
 
-        <Styled.Section bg="primary.light" detail={true}>
+        <Styled.Section bg="primary.light">
+          <div className="container">
+            <div className="grid">
+              <div className="half">
+                <h1 className="white">Serviço profissional</h1>
+                <p className="white">
+                  Temos profissionais com anos de experiência, especialistas em
+                  massagens tailandezas, orientais, europeias e diversos outros
+                  tipos.
+                </p>
+                <p className="white">
+                  No nosso hotel você é tratado do jeito que merece.
+                </p>
+              </div>
+              <div className="half">
+                <img
+                  className="photo register"
+                  src="/img/photo-1.jpg"
+                  width={"100%"}
+                />
+              </div>
+            </div>
+          </div>
+        </Styled.Section>
+
+        <Styled.Section bg="white">
+          <div className="container">
+            <div className="grid">
+              <div className="half">
+                <img
+                  className="photo register"
+                  src="/img/photo-2.jpg"
+                  width={"100%"}
+                />
+              </div>
+              <div className="half">
+                <h1>Hotel RedLight</h1>
+                <p>
+                  Situado a apenas 400 metros da famosa Praia do Gonzaga, a Casa
+                  das primas oferece piscina ao ar livre, buffet de café da
+                  manhã, bar, primas de qualidades, ruivas, morenas, magras,
+                  negras, asiaticas, coreanas, africanas, japonesas, anjos,
+                  futanaris e tudo que a de melhor, recepção 24 horas e
+                  estacionamento privativo, que pode ser disponibilizado por um
+                  custo extra.
+                </p>
+                <p>
+                  Alguns quartos dispõem de ar-condicionado e Wi-Fi gratuito. As
+                  unidades modernas do Atlântico Inn Apart Hotel têm banheiro
+                  privativo com chuveiro. As comodidades também incluem TV a
+                  cabo, mesa de trabalho e frigobar.
+                </p>
+              </div>
+            </div>
+          </div>
+        </Styled.Section>
+
+        <Styled.Section id="avaliacoes" bg="primary.light" detail={true}>
           <div className="container">
             <h1>Avaliações dos hospedes</h1>
 
