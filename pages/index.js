@@ -328,7 +328,7 @@ export default function Home() {
               <div className="half">
                 <img
                   className="register"
-                  src="/svgs/download-app.svg"
+                  src="/svgs/download-app-2.svg"
                   width={"100%"}
                 />
               </div>
