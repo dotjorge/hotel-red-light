@@ -333,9 +333,19 @@ export default function Home() {
                 />
               </div>
               <div className="half">
-                <h1>Baixo nosso aplicativo e faça sua reserva</h1>
+                <h1>Baixo nosso aplicativo agora e reserve</h1>
                 <p>
-                  Com ele você baixa e gerencie suas reservas mais facilmente.
+                  Temos mais de 47 milhões de downloads e estamos nas principais
+                  lojas, somos o maior aplicativo de hoteis de todo o mundo!
+                </p>
+                <p>
+                  Desenvolvido por programadores adeptos à metodologia ágil XGH
+                  (eXtreme Go Horse) e um time de UX com vasta experiência em
+                  experiência do usuário.
+                </p>
+                <p>
+                  Por isso com ele você gerencia suas reservas com extrema
+                  facilidade, com tudo na palma da sua mão.
                 </p>
                 <Button.Link href="/dowload">
                   <Button size="auto">
