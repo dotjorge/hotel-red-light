@@ -333,7 +333,7 @@ export default function Home() {
                 />
               </div>
               <div className="half">
-                <h1>Baixo nosso aplicativo agora e reserve</h1>
+                <h1>Baixo nosso aplicativo e reserve agora</h1>
                 <p>
                   Temos mais de 47 milhões de downloads e estamos nas principais
                   lojas, somos o maior aplicativo de hoteis de todo o mundo!
